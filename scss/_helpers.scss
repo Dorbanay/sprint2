@@ -55,7 +55,8 @@
   position: relative;
   width: 300px; 
   height: 173.21px;
-  background-color: #64C7CC;
+  // background-image: none;
+  background-image: url("assets/imgs/img1.jpg");
   margin: 86.60px 0;
 }
 
@@ -70,11 +71,11 @@
 
 .hexagon:before {
   bottom: 100%;
-  border-bottom: 86.60px solid #64C7CC;
+  border-bottom: 86.60px solid;
 }
 
 .hexagon:after {
   top: 100%;
   width: 0;
-  border-top: 86.60px solid #64C7CC;
+  border-top: 86.60px solid;
 }
