@@ -1,13 +1,48 @@
-.main-about{
-    background-color: #2eb398;
+.bg{
+      background-color: #2eb398;
 }
+.main-about {
+    background-color: #2eb398;
+    border: 1px solid cadetblue;
+}
+
 
 .main-about__img {
+margin-right: em(20px);
+// margin-bottom: em(20px);
+padding-bottom: em(10px);
+}
 
+
+.main-about__div {
+ 
 }
 
 
 
-.main-about__text {
-    
+
+.main-about__title {
+color: #d7fcf5;
+font-family: "Maven Pro Regular";
+font-size: rem(36px);
+font-weight: 400;
+line-height: 5px;
+}
+
+
+.main-about__title2 {
+color: #20816d;
+font-family: "Maven Pro Regular";
+font-size: rem(24px);
+font-weight: 400;
+line-height: 22px;
+}
+
+
+.main-about__summery {
+color: #d7fcf5;
+font-family: Lato;
+font-size: rem(16px);
+font-weight: 400;
+line-height: 22px;
 }
