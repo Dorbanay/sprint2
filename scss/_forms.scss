@@ -10,6 +10,7 @@
   background-color: transparent;
   width: 100%;
   padding: 0.5em 0.2em;
+  color: #e0e0e0;
 }
 
 .form-group {
@@ -21,13 +22,15 @@ background-color: #323232;
 }
 
 
-
-.red{
-    color:red;
-    }
 .form-area
 {
   color: #e0e0e0;
   background-color: #323232;
 	padding: 10px 40px 60px;
 	}
+
+  ::-webkit-input-placeholder { 
+  color: #e0e0e0;
+}
+
+
