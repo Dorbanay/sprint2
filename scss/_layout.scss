@@ -1,7 +1,13 @@
 /*----------  Containers  ----------*/
 
 .container {
-  // width: var(--container-width);
+  // width: var(--container-width);  
   margin: 0 auto;
   padding: 0 1em;
+}
+
+
+.inner-container {
+  width: var(--inner-container-width);
+  margin: em(20px) auto;
 }
