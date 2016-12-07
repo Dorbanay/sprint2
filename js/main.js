@@ -82,7 +82,7 @@ function render() {
 
 /// ===== main ===== ////
 function doCanvas(imgId) {
-    
+
     var img = new Image();
     img.src = '../assets/imgs/img' + imgId + '.jpg';
 
@@ -94,6 +94,9 @@ function doCanvas(imgId) {
 }
 
 
+
+
+
 function getGallerySection() {
     var elMainGallery = $('.main-gallery');
     // console.log(x);
@@ -101,40 +104,4 @@ function getGallerySection() {
 }
 
 
-
-
-
-
-// function init() {
-//     canvas = document.getElementById('canvas');
-//     ctx = canvas.getContext('2d');
-//     drawOnCanvas();
-// }
-
-
-
-/**
-* Demonstrates how to download a canvas an image with a single
-* direct click on a link.
-*/
-function drawOnCanvas(id) {
-    var img = new Image();
-    img.src = "'+id'";
-
-    img.onload = function () {
-        ctx.drawImage(img, 0, 0, 568, 360);
-        ctx.font = "60px 'Segoe UI'";
-        ctx.fillText("print on Canvas", 50, 300);
-    };
-}
-
-/**
-* This is the function that will take care of image extracting and
-* setting proper filename for the download.
-* IMPORTANT: Call it from within a onclick event.
-*/
-// function downloadImg(elLink) {
-//     elLink.href = canvas.toDataURL();
-//     elLink.download = 'perfectMeme.jpg';
-// }
 
