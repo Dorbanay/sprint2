@@ -44,7 +44,7 @@ function render() {
         var id = hexagon.id;
         var url = hexagon.url;
         var keywords = hexagon.keywords;
-        strHtml += '<div class="hexagon img-resposive" onclick="doCanvas(' + id + ')" style="background-image: url(' + url + ')" id="' + id + '">';
+        strHtml += '<div class="hexagon img-resposive" onclick="doCanvas(' + id + '); showMemeSection()" style="background-image: url(' + url + ')" id="' + id + '">';
 
         strHtml += '' + '<div class="face1"></div><div class="face2"></div></div>';
 
@@ -66,6 +66,7 @@ function doCanvas(imgId) {
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
         ctx.font = "60px 'Segoe UI'";
+  
 
     };
 }
@@ -74,11 +75,22 @@ function doCanvas(imgId) {
 
 ///=== A function that hidding the gallry and showing the canvas
 
-function getGallerySection() {
-    var elMainGallery = $('.main-gallery');
-    elMainGallery.addClass('displaynone');
-    canvas.style.display = 'initial';
+function showMemeSection() {
+   var elMainGallery = document.querySelector('.main-gallery');
+    elMainGallery.style.display = 'none';
+    var elCanvas = document.querySelector('.canvas-main');
+    elCanvas.style.display = 'block';
 }
+
+
+function showGallerySection() {
+    var elMainGallery = document.querySelector('.main-gallery');
+    elMainGallery.style.display = 'flex';
+    var elCanvas = document.querySelector('.canvas-main');
+    elCanvas.style.display = 'none';
+}
+
+
 
 
 ///==== A function that types text input on canvas and renders each time (for deletring options) === ////
@@ -86,10 +98,10 @@ function getGallerySection() {
 function typeOnCanvas() {
     var memeText = $('#custom-text');
     doCanvas(currMemeText);
-    setTimeout(function() {
+    setTimeout(function () {
         ctx.fillText(memeText.val(), 50, 300)
     }, 100);
-    
+
 }
 
 
@@ -99,7 +111,7 @@ function typeOnCanvas() {
 //     setTimeout(function() {
 //         ctx.fillText(memeText.val(), 50, 300)
 //     }, 100);
-    
+
 // }
 
 
