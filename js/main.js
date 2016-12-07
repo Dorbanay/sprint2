@@ -71,8 +71,24 @@ function typeOnCanvas() {
 
 
 function typeOnKeyword(){
+    //catch the input
     var keywordText = $('#keywords-text');
-    keywordText.val();
+    //runs on all .hexagon.img-resposive with jquery foreach
+    $('.hexagon.img-resposive').each(function(index,item) {
+    //create temp array with all the keywords of a specific hexagon
+        var tempKeywords = $(item).data('keywords');
+    //if some of the keywords has the character don't touch the img 
+    //if it doesn't have - add class hide
+        if(!tempKeywords.some(function(keyword) {
+                return keyword.includes(keywordText.val())
+            }))
+        {
+            $(item).addClass('hide');
+        }
+        else {
+            $(item).removeClass('hide');
+        }
+    });
 }
 
 
