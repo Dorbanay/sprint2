@@ -94,6 +94,8 @@ function showGallerySection() {
     elMainGallery.show(1000);
     var elCanvas = $('.canvas-main');
     elCanvas.hide(1000);
+    var memeText = $('#custom-text');
+    memeText.val('');
     gMeme = null;
 }
 
