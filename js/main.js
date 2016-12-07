@@ -97,6 +97,7 @@ function doCanvas(imgId) {
 
 
 
+
 function getGallerySection() {
     var elMainGallery = $('.main-gallery');
     // console.log(x);
