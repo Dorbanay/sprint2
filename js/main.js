@@ -5,30 +5,11 @@ console.log('Hello Meme');
 ///===== vars === ///
 
 var gMemes;
+var gMeme = null;
 var canvas;
 var ctx;
 var currMemeText;
 
-
-var gMeme = null;
-
-function drawCanvas() {
-
-    var img = new Image();
-    img.src = '../assets/imgs/img' + gMeme.item.id + '.jpg';
-    img.onload = function () {
-        ctx.drawImage(img, 0, 0, 568, 360);
-        ctx.font = "60px 'Segoe UI'";
-        ctx.fillText(gMeme.labels[0].txt, 50, 300)
-
-    };
-}
-
-function typeOnCanvas() {
-    var memeText = $('#custom-text');
-    gMeme.labels[0].txt =  memeText.val();
-    drawCanvas();
-}
 
 
 ///=== A function that loads the page ==== ///
@@ -38,23 +19,6 @@ function init() {
     renderMemes();
     canvas = document.querySelector('.canvas');
     ctx = canvas.getContext('2d');
-}
-
-//// ==== A function that crates the hexagons model ==== 
-// TODO Items instead of hexagons
-function getMemes() {
-    var hexagons = [];
-    for (var i = 0; i < 10; i++) {
-        var hexId = i + 1;
-        var hex = {
-            id: hexId,
-            url: '../assets/imgs/img' + hexId + '.jpg',
-            keyWords: ['happy', 'crazy', 'sarcastic', 'sad', 'animal']
-        };
-        hexagons.push(hex);
-    }
-
-    return hexagons;
 }
 
 
@@ -76,32 +40,45 @@ function renderMemes() {
     element.innerHTML = strHtml;
 }
 
-function selectMeme(memeId) {
-    gMeme = {item: {id: memeId}, labels: [{txt: '', color: '#3F2'}]  };
-    drawCanvas(); 
-    showMemeSection()
+
+
+
+function drawCanvas() {
+
+    var img = new Image();
+    img.src = '../assets/imgs/img' + gMeme.item.id + '.jpg';
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0, 568, 360);
+        ctx.font = "60px 'Segoe UI'";
+        ctx.fillText(gMeme.labels[0].txt, 50, 300)
+
+    };
 }
+
+
+
+
+///==== A function that types text input on canvas and  === ////
+
+function typeOnCanvas() {
+    var memeText = $('#custom-text');
+    gMeme.labels[0].txt = memeText.val();
+    drawCanvas();
+}
+
 
 
 /// ===== main ===== ////
 
 
-// function doCanvas(imgId) {
-
-//     var img = new Image();
-//     img.src = '../assets/imgs/img' + imgId + '.jpg';
-//     currMemeText = imgId;
-//     img.onload = function () {
-//         ctx.drawImage(img, 0, 0, 568, 360);
-//         ctx.font = "60px 'Segoe UI'";
+function selectMeme(memeId) {
+    gMeme = { item: { id: memeId }, labels: [{ txt: '', color: '#3F2' }] };
+    drawCanvas();
+    showMemeSection()
+}
 
 
-//     };
-// }
-
-
-
-///=== A function that hidding the gallry and showing the canvas
+///=== A function that hidding the gallry and showing the canvas === ///
 
 function showMemeSection() {
     var elMainGallery = $('.main-gallery');
@@ -110,6 +87,7 @@ function showMemeSection() {
     elCanvas.show(1000);
 }
 
+///=== A function that hidding the canvas and showing the gallery === ///
 
 function showGallerySection() {
     var elMainGallery = $('.main-gallery');
@@ -119,6 +97,9 @@ function showGallerySection() {
     gMeme = null;
 }
 
+
+///=== A function that let the user download the Meme === ///
+
 function downloadImg(elLink) {
     elLink.href = canvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
@@ -127,26 +108,23 @@ function downloadImg(elLink) {
 
 
 
-
-///==== A function that types text input on canvas and renders each time (for deletring options) === ////
-
-function typeOnCanvas1() {
-    var memeText = $('#custom-text');
-    doCanvas(currMemeText);
-    setTimeout(function () {
-        ctx.fillText(memeText.val(), 50, 300)
-    }, 100);
-
-}
-
-
-// function typeOnCanvas2() {
-//     var memeText = $('#custom-text2');
+// function typeOnCanvas1() {
+//     var memeText = $('#custom-text');
 //     doCanvas(currMemeText);
-//     setTimeout(function() {
+//     setTimeout(function () {
 //         ctx.fillText(memeText.val(), 50, 300)
 //     }, 100);
 
 // }
+
+
+// // function typeOnCanvas2() {
+// //     var memeText = $('#custom-text2');
+// //     doCanvas(currMemeText);
+// //     setTimeout(function() {
+// //         ctx.fillText(memeText.val(), 50, 300)
+// //     }, 100);
+
+// // }
 
 
