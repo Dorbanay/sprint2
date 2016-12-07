@@ -8,7 +8,7 @@ function getMemes() {
         var hex = {
             id: hexId,
             url: '../assets/imgs/img' + hexId + '.jpg',
-            keyWords: ['happy', 'crazy', 'sarcastic', 'sad', 'animal']
+            keywords: ['happy', 'crazy', 'sarcastic', 'sad', 'animal'].splice(getRandomInt(0,4),getRandomInt(1,3))
         };
         hexagons.push(hex);
     }
@@ -16,3 +16,7 @@ function getMemes() {
     return hexagons;
 }
 
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

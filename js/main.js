@@ -30,7 +30,8 @@ function renderMemes() {
         var id = hexagon.id;
         var url = hexagon.url;
         var keywords = hexagon.keywords;
-        strHtml += '<div class="hexagon img-resposive" onclick="selectMeme(' + id + ')" style="background-image: url(' + url + ')" id="' + id + '">';
+        strHtml += `<div class="hexagon img-resposive" onclick="selectMeme(${id})"
+            style="background-image: url(${url})" id="${id}" data-keywords=${JSON.stringify(keywords)}>`;
 
         strHtml += '' + '<div class="face1"></div><div class="face2"></div></div>';
 
@@ -67,10 +68,13 @@ function typeOnCanvas() {
 }
 
 
+function typeOnKeyword(){
+    var keywordText = $('#keywords-text');
+    keywordText.val();
+}
 
 
 
-function getGallerySection() {
 
 /// ===== main ===== ////
 
@@ -78,7 +82,7 @@ function getGallerySection() {
 function selectMeme(memeId) {
     gMeme = { item: { id: memeId }, labels: [{ txt: '', color: '#3F2' }] };
     drawCanvas();
-    showMemeSection()
+    showMemeSection();
 }
 
 
