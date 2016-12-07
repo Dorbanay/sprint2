@@ -47,7 +47,7 @@ function createHexagons() {
         var hex = {
             id: hexId,
             url: '../assets/imgs/img' + hexId + '.jpg',
-            keydown: ['happy', 'crazy', 'sarcastic', 'sad', 'animal']
+            keyWords: ['happy', 'crazy', 'sarcastic', 'sad', 'animal']
         };
         hexagons.push(hex);
     }
@@ -102,6 +102,22 @@ function getGallerySection() {
     // console.log(x);
     elMainGallery.addClass('displaynone');
 }
+
+
+
+
+
+
+// window.addEventListener("keydown", handlekey, false);
+
+// function handlekey(e) {
+
+//     var x = $('#custom-text');
+//     ctx = canvas.getContext('2d');
+//     ctx.fillText = ("x.val", 50, 300)
+// }
+
+
 
 
 
