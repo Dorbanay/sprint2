@@ -31,9 +31,11 @@ function renderMemes() {
         var url = hexagon.url;
         var keywords = hexagon.keywords;
         //es6 template - looks more like html , no need to break lines
+        // join - wanted to show the keywords on hover
+        //title - built in html show on hover
         strHtml += `
                     <div class="hexagon img-resposive" onclick="selectMeme(${id})"
-                        style="background-image: url(${url})" id="${id}" data-keywords=${JSON.stringify(keywords)}>
+                        style="background-image: url(${url})" title="${keywords.join(',')}" id="${id}" data-keywords=${JSON.stringify(keywords)}>
                     <div class="face1"></div><div class="face2"></div></div>
                   `;
 
