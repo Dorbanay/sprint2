@@ -1,34 +1,16 @@
 'use strict';
 console.log('Hello Meme');
 
+
+///===== vars === ///
+
 var gHex;
 var canvas;
 var ctx;
-
-// $(document).ready(function () {
-//     $('#characterLeft').text('140 characters left');
-//     $('#message').keydown(function () {
-//         var max = 140;
-//         var len = $(this).val().length;
-//         if (len >= max) {
-//             $('#characterLeft').text('You have reached the limit');
-//             $('#characterLeft').addClass('red');
-//             $('#btnSubmit').addClass('disabled');
-//         }
-//         else {
-//             var ch = max - len;
-//             $('#characterLeft').text(ch + ' characters left');
-//             $('#btnSubmit').removeClass('disabled');
-//             $('#characterLeft').removeClass('red');
-//         }
-//     });
-// });
+var currMemeText;
 
 
-
-
-
-
+///=== A function that loads the page ==== ///
 
 function init() {
     gHex = createHexagons();
@@ -37,11 +19,9 @@ function init() {
     ctx = canvas.getContext('2d');
 }
 
-
+//// ==== A function that crates the hexagons model ==== ///
 function createHexagons() {
-
     var hexagons = [];
-
     for (var i = 0; i < 10; i++) {
         var hexId = i + 1;
         var hex = {
@@ -57,7 +37,7 @@ function createHexagons() {
 
 
 
-
+/// ===== A function thats redners the model hexagons to the DOM ==== ////
 function render() {
     var strHtml = '';
     gHex.forEach(function (hexagon) {
@@ -75,49 +55,51 @@ function render() {
 }
 
 
-
-
-
-
-
 /// ===== main ===== ////
+
+
 function doCanvas(imgId) {
 
     var img = new Image();
     img.src = '../assets/imgs/img' + imgId + '.jpg';
-
+    currMemeText = imgId;
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
         ctx.font = "60px 'Segoe UI'";
-        ctx.fillText("", 50, 300);
+
     };
 }
 
 
 
-
+///=== A function that hidding the gallry and showing the canvas
 
 function getGallerySection() {
     var elMainGallery = $('.main-gallery');
-    // console.log(x);
     elMainGallery.addClass('displaynone');
+    canvas.style.display = 'initial';
 }
 
 
+///==== A function that types text input on canvas and renders each time (for deletring options) === ////
+
+function typeOnCanvas() {
+    var memeText = $('#custom-text');
+    doCanvas(currMemeText);
+    setTimeout(function() {
+        ctx.fillText(memeText.val(), 50, 300)
+    }, 100);
+    
+}
 
 
-
-
-// window.addEventListener("keydown", handlekey, false);
-
-// function handlekey(e) {
-
-//     var x = $('#custom-text');
-//     ctx = canvas.getContext('2d');
-//     ctx.fillText = ("x.val", 50, 300)
+// function typeOnCanvas2() {
+//     var memeText = $('#custom-text2');
+//     doCanvas(currMemeText);
+//     setTimeout(function() {
+//         ctx.fillText(memeText.val(), 50, 300)
+//     }, 100);
+    
 // }
-
-
-
 
 
