@@ -33,14 +33,17 @@
 		<!--  GALLERY -->
 		<section class="inner-container">
 			<section class="main-gallery flex flex-wrap align-center justify-center">
-
 			</section>
+
 		</section>
 		<!--  END GALLERY -->
 		<!--  Meme Generator -->
 		<section class="container canvas-main">
 			<canvas class="canvas" width="800" height="400" style="border: 1px solid black"></canvas>
 			<input id="custom-text" type="text" placeholder="enter some text" oninput="typeOnCanvas()">
+			<a id="download" onclick="downloadImg(this)">
+         	 Download as image
+      		</a>
 			<button onclick="showGallerySection()">Back To Gallery</button>
 			<!--<input id="custom-text2" type="text" placeholder="enter some text" oninput="typeOnCanvas2()">-->
 		</section>
