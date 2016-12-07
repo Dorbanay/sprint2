@@ -68,10 +68,10 @@ function typeOnCanvas() {
 
 
 
-<<<<<<< HEAD
+
 
 function getGallerySection() {
-=======
+
 /// ===== main ===== ////
 
 
@@ -94,7 +94,6 @@ function showMemeSection() {
 ///=== A function that hidding the canvas and showing the gallery === ///
 
 function showGallerySection() {
->>>>>>> 5d66284004ae3903666e2f0aebd04f90762b95a2
     var elMainGallery = $('.main-gallery');
     elMainGallery.show(1000);
     var elCanvas = $('.canvas-main');
