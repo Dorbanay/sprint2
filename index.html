@@ -33,28 +33,27 @@
 		<!--  GALLERY -->
 		<section class="inner-container">
 			<section class="main-gallery flex flex-wrap align-center justify-center">
-				<!--<div class="hexagon" onclick="exportImgToMeme(this)">
-					<div class="face1"></div>
-					<div class="face2"></div>
-				</div>-->
 			</section>
+
 		</section>
 		<!--  END GALLERY -->
 		<!--  Meme Generator -->
-		<section class="container">	
-			<canvas class="canvas" width="800" height="400" style="border: 1px solid black">
-			</canvas>
-			<input id="custom-text" type="text" placeholder="enter some text">
-			<!--<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>-->
-
+		<section class="container canvas-main">
+			<canvas class="canvas" width="800" height="400" style="border: 1px solid black"></canvas>
+			<input id="custom-text" type="text" placeholder="enter some text" oninput="typeOnCanvas()">
+			<a id="download" onclick="downloadImg(this)">
+         	 Download as image
+      		</a>
+			<button onclick="showGallerySection()">Back To Gallery</button>
+			<!--<input id="custom-text2" type="text" placeholder="enter some text" oninput="typeOnCanvas2()">-->
 		</section>
-
+		<!-- End Meme Generator -->
 		<hr>
 		<!--  About -->
 		<div class="bg">
 			<section class="main-about inner-container2 flex full-height">
 				<div>
-					<div class="hexagon main-about__img">
+					<div class="hexagon main-about__img img1">
 						<div class="face1"></div>
 						<div class="face2"></div>
 					</div>
@@ -66,11 +65,10 @@
 						augue, eget consectetur sem dui non urna. Integer gravida, diam congue molestie fringilla, elit odio rhoncus turpis,
 						ac dictum libero elit vel metus. Morbi egestas sit amet velit eget venenatis. Mauris porttitor, nibh at sagittis tristique,
 						enim magna pretium augue, eget consectetur sem dui non urna.</p>
-
 				</div>
 				<hr>
 				<div>
-					<div class="hexagon main-about__img">
+					<div class="hexagon main-about__img img2">
 						<div class="face1"></div>
 						<div class="face2"></div>
 					</div>
@@ -125,6 +123,7 @@
 	</section>
 	<!-- End Main Container -->
 	<script src="lib/jquery/jquery.js"></script>
+	<script src="js/memes.js"></script>
 	<script src="js/main.js"></script>
 </body>
 
