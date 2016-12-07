@@ -21,7 +21,7 @@
 				<ul class="clean-list main-nav__items flex">
 					<li><a href="#" class="main-nav__item">Journal</a></li>
 					<li><a href="#" class="main-nav__item ">About</a></li>
-					<div> adasd </div>
+					<div class="arrow-down"></div>
 					<li><a href="#" class="main-nav__item ">Work</a></li>
 					<li><a href="#" class="main-nav__item ">Contact</a></li>
 				</ul>
@@ -33,54 +33,61 @@
 		<!--  GALLERY -->
 		<section class="inner-container">
 			<section class="main-gallery flex flex-wrap align-center justify-center">
-				<div class="hexagon main-gallery__item img1">
+				<div class="hexagon main-gallery__item img1" onclick="exportImgToMeme(this)">
+					<div class="face1" oncl></div>
+					<div class="face2"></div>
+				</div>
+				<div class="hexagon main-gallery__item img2" onclick="exportImgToMeme(this)">
 					<div class="face1"></div>
 					<div class="face2"></div>
 				</div>
-				<div class="hexagon main-gallery__item img2">
+				<div class="hexagon main-gallery__item img3" onclick="exportImgToMeme(this)">
 					<div class="face1"></div>
 					<div class="face2"></div>
 				</div>
-				<div class="hexagon main-gallery__item img3">
+				<div class="hexagon main-gallery__item img4" onclick="exportImgToMeme(this)">
 					<div class="face1"></div>
 					<div class="face2"></div>
 				</div>
-				<div class="hexagon main-gallery__item img4">
+				<div class="hexagon main-gallery__item img5" onclick="exportImgToMeme(this)">
 					<div class="face1"></div>
 					<div class="face2"></div>
 				</div>
-				<div class="hexagon main-gallery__item img5">
+				<div class="hexagon main-gallery__item img6" onclick="exportImgToMeme(this)">
 					<div class="face1"></div>
 					<div class="face2"></div>
 				</div>
-				<div class="hexagon main-gallery__item img6">
+				<div class="hexagon main-gallery__item img7" onclick="exportImgToMeme(this)">
 					<div class="face1"></div>
 					<div class="face2"></div>
 				</div>
-				<div class="hexagon main-gallery__item img7">
+				<div class="hexagon main-gallery__item img8" onclick="exportImgToMeme(this)">
 					<div class="face1"></div>
 					<div class="face2"></div>
 				</div>
-				<div class="hexagon main-gallery__item img8">
+				<div class="hexagon main-gallery__item img9" onclick="exportImgToMeme(this)">
 					<div class="face1"></div>
 					<div class="face2"></div>
 				</div>
-				<div class="hexagon main-gallery__item img9">
-					<div class="face1"></div>
-					<div class="face2"></div>
-				</div>
-				<div class="hexagon main-gallery__item img10">
+				<div class="hexagon main-gallery__item img10" onclick="exportImgToMeme(this)">
 					<div class="face1"></div>
 					<div class="face2"></div>
 				</div>
 			</section>
 		</section>
 		<!--  END GALLERY -->
+		<!--  Meme Generator -->
+		<section class="container">	
+			<canvas class="canvas" width="800" height="400" style="border: 1px solid black">
+
+			</canvas>
+		</section>
+
 		<hr>
 		<!--  About -->
 		<div class="bg">
-			<section class="main-about inner-container2 flex full-height space-between">
-				<div class="main-about__img">
+			<section class="main-about inner-container2 flex full-height">
+				<div>
 					<div class="hexagon main-about__img">
 						<div class="face1"></div>
 						<div class="face2"></div>
@@ -96,7 +103,7 @@
 
 				</div>
 				<hr>
-				<div class="main-about__img">
+				<div>
 					<div class="hexagon main-about__img">
 						<div class="face1"></div>
 						<div class="face2"></div>

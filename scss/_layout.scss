@@ -19,3 +19,11 @@
   width: 80%;
   margin: auto;
 }
+
+
+
+@mixin for-mobile-only {
+  @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}

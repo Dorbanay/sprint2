@@ -4,6 +4,10 @@
 .main-about {
     background-color: #2eb398;
     border: 1px solid cadetblue;
+    @include for-mobile-only {
+     flex-wrap: wrap;
+  }
+     
 }
 
 
