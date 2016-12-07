@@ -30,10 +30,12 @@ function renderMemes() {
         var id = hexagon.id;
         var url = hexagon.url;
         var keywords = hexagon.keywords;
-        strHtml += `<div class="hexagon img-resposive" onclick="selectMeme(${id})"
-            style="background-image: url(${url})" id="${id}" data-keywords=${JSON.stringify(keywords)}>`;
-
-        strHtml += '' + '<div class="face1"></div><div class="face2"></div></div>';
+        //es6 template - looks more like html , no need to break lines
+        strHtml += `
+                    <div class="hexagon img-resposive" onclick="selectMeme(${id})"
+                        style="background-image: url(${url})" id="${id}" data-keywords=${JSON.stringify(keywords)}>
+                    <div class="face1"></div><div class="face2"></div></div>
+                  `;
 
     });
 
