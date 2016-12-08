@@ -7,7 +7,7 @@
 .form-area {
   color: #e0e0e0;
   background-color: #323232;
-	padding: em(10px) em(40px) em(60px);
+	padding:10px 40px 60px;
   margin-left: em(100px);
 }
 
@@ -84,6 +84,13 @@ background-color: #323232;
   font-size: rem(12px);
   font-weight: 700;
   line-height: 22px;
+  cursor: pointer;
+  transition: all 1s;
+  &:hover {
+    background-color:#d7fcf5;
+    color: #2eb398;
+    border: 1px solid #2eb398;
+  }
 
 }
 
@@ -94,7 +101,7 @@ background-color: #323232;
 
 
 .text-area__summery {
-  margin-bottom: em(40px);
+  margin-top: em(160px);
   font-size: rem(16px);
   line-height: 28px;
   color: #e0e0e0;

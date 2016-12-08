@@ -12,35 +12,45 @@
 
 
 .main-about__img {
-margin-right: em(20px);
-// margin-bottom: em(20px);
-padding-bottom: em(10px);
+    margin-right: em(20px);
+    margin-left: em(20px);
+    @include for-mobile-only {
+       margin: 0;
+  }
 }
 
 
 .main-about__title {
-color: #d7fcf5;
-font-family: "Maven Pro Regular";
-font-size: rem(36px);
-font-weight: 400;
+     color: #d7fcf5;
+     font-family: "Maven Pro Regular";
+     font-size: rem(36px);
+     font-weight: 400;
+      @include for-mobile-only {
+       margin: 0;
+  }
 }
 
 
 .main-about__title2 {
-color: #20816d;
-font-family: "Maven Pro Regular";
-font-size: rem(24px);
-font-weight: 400;
-line-height: 22px;
+     color: #20816d;
+     font-family: "Maven Pro Regular";
+     font-size: rem(24px);
+     font-weight: 400;
+     line-height: 22px;
+      @include for-mobile-only {
+      margin: 0;
+  }
 }
 
 
 .main-about__summery {
-color: #d7fcf5;
-font-family: Lato;
-font-size: rem(16px);
-font-weight: 400;
-line-height: 22px;
-}
+     color: #d7fcf5;
+     font-size: rem(16px);
+     font-weight: 400;
+     line-height: 22px;
+      @include for-mobile-only {
+       margin:0;
+  }
+ }
 
 
