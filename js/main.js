@@ -34,7 +34,7 @@ function renderMemes() {
         // join - wanted to show the keywords on hover
         //title - built in html show on hover
         strHtml += `
-                    <div class="hexagon img-resposive" onclick="selectMeme(${id})"
+                    <div class="hexagon img-resposive gallery-item" onclick="selectMeme(${id})"
                         style="background-image: url(${url})" title="${keywords.join(',')}" id="${id}" data-keywords=${JSON.stringify(keywords)}>
                     <div class="face1"></div><div class="face2"></div></div>
                   `;
@@ -71,18 +71,25 @@ function typeOnCanvas() {
     drawCanvas();
 }
 
+///==== A function that handles the keyword search  === ////
 
-function typeOnKeyword(){
-    //catch the input
-    var keywordText = $('#keywords-text');
+function typeOnKeyword(keywordToSearch){
+    var keywordText;
+    if (!keywordToSearch){
+        keywordText = $('#keywords-text').val();
+    }
+    else {
+        keywordText = keywordToSearch;
+    }
+    
     //runs on all .hexagon.img-resposive with jquery foreach
-    $('.hexagon.img-resposive').each(function(index,item) {
+    $('.hexagon.gallery-item').each(function(index,item) {
     //create temp array with all the keywords of a specific hexagon
         var tempKeywords = $(item).data('keywords');
     //if some of the keywords has the character don't touch the img 
     //if it doesn't have - add class hide
         if(!tempKeywords.some(function(keyword) {
-                return keyword.includes(keywordText.val())
+                return keyword.includes(keywordText)
             }))
         {
             $(item).fadeOut(1000);
@@ -93,7 +100,12 @@ function typeOnKeyword(){
     });
 }
 
+///==== A function that handles the popular keyword  === ////
 
+function clickOnKeyword(keyword) {
+    typeOnKeyword(keyword.innerHTML);
+    console.log(keyword);
+}
 
 
 /// ===== main ===== ////
