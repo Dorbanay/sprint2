@@ -45,6 +45,7 @@
 
 .form-group {
   margin: 1em 0;
+  
 }
 
 .bg2 {
@@ -58,41 +59,35 @@ background-color: #323232;
 
 
 .form-name { 
-  // width: em(880px);
   width: 100%;
-  // height: em(58px);
   background-color: #454545;
-   @include for-mobile-only {
-       width: em(440px);
-  }
+ @include for-mobile-only {
+       margin: 0;
+    }
 }
 
 .form-email { 
    width: 100%;
-  // height: em(58px);
   background-color: #454545;
-    @include for-mobile-only {
-       width: em(440px);
-  }
+  @include for-mobile-only {
+       margin: 0;
+    }
 }
 
 .form-subject { 
    width: 100%;
-  // height: em(58px);
   background-color: #454545;
-    @include for-mobile-only {
-       width: em(440px);
-  }
+  @include for-mobile-only {
+       margin: 0;
+    }
 }
 
 .form-message { 
    width: 100%;
-  // height: em(170px);
   background-color: #454545;
     @include for-mobile-only {
-       width: em(440px);
-       height: em(90px);
-  } 
+       margin: 0;
+    }
 }
 
 .submit-button {
@@ -122,7 +117,8 @@ background-color: #323232;
     margin-right: em(200px);
     margin-top: em(115px);
     @include for-mobile-only {
-       margin: 0;
+       margin: em(5px);
+      
     }
 
 }
@@ -136,12 +132,16 @@ background-color: #323232;
   color: #e0e0e0;
   font-weight: 300;
     @include for-mobile-only {
-       margin: 0;
+       margin: em(5px);
     }
 }
 
 .text-area__info {
   padding-top: 15px;
+  @include for-mobile-only {
+       margin: 0;
+
+    }
 }
 
 .mark {
