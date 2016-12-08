@@ -4,6 +4,12 @@
   font-family: var(--primary-font);
 }
 
+.form-wrapper {
+      @include for-mobile-only {
+    flex-direction: column;
+  }
+}
+
 .form-area {
   color: #e0e0e0;
   background-color: #323232;
@@ -12,6 +18,7 @@
   width: 100%;
     @include for-mobile-only {
        margin: 0 ; 
+       
   }
 }
 
@@ -133,6 +140,7 @@ background-color: #323232;
   font-weight: 300;
     @include for-mobile-only {
        margin: em(5px);
+       width: 100%; 
     }
 }
 
