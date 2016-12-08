@@ -73,25 +73,24 @@ function typeOnCanvas() {
 
 ///==== A function that handles the keyword search  === ////
 
-function typeOnKeyword(keywordToSearch){
+function typeOnKeyword(keywordToSearch) {
     var keywordText;
-    if (!keywordToSearch){
+    if (!keywordToSearch) {
         keywordText = $('#keywords-text').val();
     }
     else {
         keywordText = keywordToSearch;
     }
-    
+
     //runs on all .hexagon.img-resposive with jquery foreach
-    $('.hexagon.gallery-item').each(function(index,item) {
-    //create temp array with all the keywords of a specific hexagon
+    $('.hexagon.gallery-item').each(function (index, item) {
+        //create temp array with all the keywords of a specific hexagon
         var tempKeywords = $(item).data('keywords');
-    //if some of the keywords has the character don't touch the img 
-    //if it doesn't have - add class hide
-        if(!tempKeywords.some(function(keyword) {
-                return keyword.includes(keywordText)
-            }))
-        {
+        //if some of the keywords has the character don't touch the img 
+        //if it doesn't have - add class hide
+        if (!tempKeywords.some(function (keyword) {
+            return keyword.includes(keywordText)
+        })) {
             $(item).fadeOut(1000);
         }
         else {
@@ -104,21 +103,20 @@ function typeOnKeyword(keywordToSearch){
 
 function clickOnKeyword(keyword) {
     // typeOnKeyword(keyword.innerHTML);
-    // res = {};
     var currInc;
-    res[keyword.innerHTML] = (res[keyword.innerHTML] === undefined)? 1 : res[keyword.innerHTML]+1;
+    res[keyword.innerHTML] = (res[keyword.innerHTML] === undefined) ? 1 : res[keyword.innerHTML] + 1;
     // console.log(res[keyword.innerHTML])
     currInc = res[keyword.innerHTML];
-    increaseFont(keyword,currInc);
-    
+    increaseFont(keyword, currInc);
+
 }
 
-function increaseFont(keyword,increase){
+function increaseFont(keyword, increase) {
     var fontSize = parseInt($(`#${keyword.id}`).css("font-size"));
     console.log(fontSize);
     fontSize = 14 + increase + "px";
     console.log(fontSize);
-    $(`#${keyword.id}`).css({'font-size':fontSize});
+    $(`#${keyword.id}`).css({ 'font-size': fontSize });
     console.log(fontSize);
 }
 
@@ -162,26 +160,5 @@ function downloadImg(elLink) {
     elLink.download = 'perfectMeme.jpg';
 }
 
-
-
-
-// function typeOnCanvas1() {
-//     var memeText = $('#custom-text');
-//     doCanvas(currMemeText);
-//     setTimeout(function () {
-//         ctx.fillText(memeText.val(), 50, 300)
-//     }, 100);
-
-// }
-
-
-// // function typeOnCanvas2() {
-// //     var memeText = $('#custom-text2');
-// //     doCanvas(currMemeText);
-// //     setTimeout(function() {
-// //         ctx.fillText(memeText.val(), 50, 300)
-// //     }, 100);
-
-// // }
 
 
