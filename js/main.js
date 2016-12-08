@@ -9,7 +9,7 @@ var gMeme = null;
 var canvas;
 var ctx;
 var currMemeText;
-
+var countOfKeywords = [];
 
 
 ///=== A function that loads the page ==== ///
@@ -104,7 +104,14 @@ function typeOnKeyword(keywordToSearch){
 
 function clickOnKeyword(keyword) {
     typeOnKeyword(keyword.innerHTML);
-    console.log(keyword);
+    increaseFont(keyword);
+    
+}
+
+function increaseFont(keyword){
+    var fontSize = parseInt($(`#${keyword.id}`).css("font-size"));
+    fontSize = fontSize + 2 + "px";
+    $(`#${keyword.id}`).css({'font-size':fontSize});
 }
 
 
