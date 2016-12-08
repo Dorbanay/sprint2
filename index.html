@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body onload="init()" >
+<body onload="init()">
 	<!-- Main Container -->
 	<section class="container">
 		<!--  Main Nav -->
@@ -34,10 +34,17 @@
 		<section class="inner-container2">
 			<section class="main-gallery flex flex-wrap align-center justify-center">
 			</section>
-
+			<input id="keywords-text" type="text" placeholder="enter keyword" oninput="typeOnKeyword()">
+			<div class="keywords-popular">
+				<div class="keywords-popular__text" onclick="clickOnKeyword(this)">happy</div>
+				<div class="keywords-popular__text" onclick="clickOnKeyword(this)">crazy</div>
+				<div class="keywords-popular__text" onclick="clickOnKeyword(this)">sarcastic</div>
+				<div class="keywords-popular__text" onclick="clickOnKeyword(this)">sad</div>
+				<div class="keywords-popular__text" onclick="clickOnKeyword(this)">animal</div>
+			</div>
 		</section>
 		<!--  END GALLERY -->
-		<input id="keywords-text" type="text" placeholder="enter keyword" oninput="typeOnKeyword()">
+
 		<!--  Meme Generator -->
 		<section class="container canvas-main">
 			<canvas class="canvas" width="800" height="400" style="border: 1px solid black"></canvas>
@@ -108,9 +115,14 @@
 					</form>
 				</div>
 				<div class="text-area flex flex-column justify-center">
-					<div class="text-area__summery"><p> <span class="mark">Quisque Hendrerit:</span> purus dapibus, <br> ornare nibh vitae, viverra <br> nibh. Fusce vitae aliquam tellus. <br> Proin sit amet volutpat libero. <br> 
-						Nulla sed nunc et tortor luctus <br> faucibus morbi vitae. </p></div>
-					<div class="text-area__summery"><p> asdasd</p></div>
+					<div class="text-area__summery">
+						<p> <span class="mark">Quisque Hendrerit:</span> purus dapibus, <br> ornare nibh vitae, viverra <br> nibh. Fusce vitae
+							aliquam tellus. <br> Proin sit amet volutpat libero. <br> Nulla sed nunc et tortor luctus <br> faucibus morbi vitae.
+							</p>
+					</div>
+					<div class="text-area__summery">
+						<p> asdasd</p>
+					</div>
 				</div>
 			</section>
 		</div>
