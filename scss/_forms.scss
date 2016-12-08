@@ -9,6 +9,10 @@
   background-color: #323232;
 	padding:10px 40px 60px;
   margin-left: em(100px);
+  width: 100%;
+    @include for-mobile-only {
+       margin: 0 ; 
+  }
 }
 
 
@@ -16,6 +20,9 @@
   border: none;
   padding: 0.5em 0.2em;
   color: #e0e0e0;
+    @include for-mobile-only {
+       margin: 0;
+  }
 }
 
 .form-main__title {
@@ -51,27 +58,41 @@ background-color: #323232;
 
 
 .form-name { 
-  width: em(880px);
-  height: em(58px);
+  // width: em(880px);
+  width: 100%;
+  // height: em(58px);
   background-color: #454545;
+   @include for-mobile-only {
+       width: em(440px);
+  }
 }
 
 .form-email { 
-  width: em(880px);
-  height: em(58px);
+   width: 100%;
+  // height: em(58px);
   background-color: #454545;
+    @include for-mobile-only {
+       width: em(440px);
+  }
 }
 
 .form-subject { 
-  width: em(880px);
-  height: em(58px);
+   width: 100%;
+  // height: em(58px);
   background-color: #454545;
+    @include for-mobile-only {
+       width: em(440px);
+  }
 }
 
 .form-message { 
-  width: em(880px);
-  height: em(170px);
+   width: 100%;
+  // height: em(170px);
   background-color: #454545;
+    @include for-mobile-only {
+       width: em(440px);
+       height: em(90px);
+  } 
 }
 
 .submit-button {
@@ -91,22 +112,36 @@ background-color: #323232;
     color: #2eb398;
     border: 1px solid #2eb398;
   }
-
+    @include for-mobile-only {
+       margin: 0;
+    }
 }
 
 
 .text-area {
-  margin-right: em(200px);
+    margin-right: em(200px);
+    margin-top: em(115px);
+    @include for-mobile-only {
+       margin: 0;
+    }
+
 }
 
 
 .text-area__summery {
-  margin-top: em(160px);
-  font-size: rem(16px);
-  line-height: 28px;
+  width: 60%;
+  margin-top: em(115px);
+  font-size: rem(12px);
+  line-height: 22px;
   color: #e0e0e0;
   font-weight: 300;
-  
+    @include for-mobile-only {
+       margin: 0;
+    }
+}
+
+.text-area__info {
+  padding-top: 15px;
 }
 
 .mark {

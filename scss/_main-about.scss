@@ -1,4 +1,4 @@
-.bg{
+.bg {
       background-color: #2eb398;
 }
 .main-about {
@@ -10,12 +10,19 @@
      
 }
 
+.main-about__text {
+       @include for-mobile-only {
+      // flex-direction: row;
+  }
+}
+
+
 
 .main-about__img {
     margin-right: em(20px);
     margin-left: em(20px);
     @include for-mobile-only {
-       margin: 0;
+      //  margin: 10px;
   }
 }
 
@@ -26,7 +33,7 @@
      font-size: rem(36px);
      font-weight: 400;
       @include for-mobile-only {
-       margin: 0;
+      //  margin: 10px;
   }
 }
 
@@ -38,7 +45,7 @@
      font-weight: 400;
      line-height: 22px;
       @include for-mobile-only {
-      margin: 0;
+      // margin: 10px;
   }
 }
 
@@ -49,7 +56,7 @@
      font-weight: 400;
      line-height: 22px;
       @include for-mobile-only {
-       margin:0;
+      //  margin: 10px;
   }
  }
 
