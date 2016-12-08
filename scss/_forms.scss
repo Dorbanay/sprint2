@@ -4,14 +4,37 @@
   font-family: var(--primary-font);
 }
 
+.form-area {
+  color: #e0e0e0;
+  background-color: #323232;
+	padding: em(10px) em(40px) em(60px);
+  margin-left: em(100px);
+}
+
+
 .form-control {
   border: none;
-  border-bottom: 1px solid #000;
-  background-color: transparent;
-  width: 100%;
   padding: 0.5em 0.2em;
   color: #e0e0e0;
 }
+
+.form-main__title {
+  color: #e0e0e0;
+  font-family: "Maven Pro Regular";
+  font-size: rem(30px);
+  font-weight: 400;
+  line-height: 5px;
+  margin-top: em(50px);
+}
+
+.form-secondery__title {
+  color: #bebebe;
+  font-family: "Maven Pro Regular";
+  font-size: rem(20px);
+  font-weight: 400;
+  line-height: 22px;
+}
+
 
 .form-group {
   margin: 1em 0;
@@ -22,15 +45,63 @@ background-color: #323232;
 }
 
 
-.form-area
-{
-  color: #e0e0e0;
-  background-color: #323232;
-	padding: 10px 40px 60px;
-	}
-
   ::-webkit-input-placeholder { 
   color: #e0e0e0;
 }
 
 
+.form-name { 
+  width: em(880px);
+  height: em(58px);
+  background-color: #454545;
+}
+
+.form-email { 
+  width: em(880px);
+  height: em(58px);
+  background-color: #454545;
+}
+
+.form-subject { 
+  width: em(880px);
+  height: em(58px);
+  background-color: #454545;
+}
+
+.form-message { 
+  width: em(880px);
+  height: em(170px);
+  background-color: #454545;
+}
+
+.submit-button {
+  border: none;
+  float: right;
+  width: em(90px);
+  height: em(37px);
+  background-color: #2eb398;
+  color: #d7fcf5;
+  font-size: rem(12px);
+  font-weight: 700;
+  line-height: 22px;
+
+}
+
+
+.text-area {
+  margin-right: em(200px);
+}
+
+
+.text-area__summery {
+  margin-bottom: em(40px);
+  font-size: rem(16px);
+  line-height: 28px;
+  color: #e0e0e0;
+  font-weight: 300;
+  
+}
+
+.mark {
+  text-decoration: bold;
+}
