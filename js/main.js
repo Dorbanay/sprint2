@@ -9,7 +9,7 @@ var gMeme = null;
 var canvas;
 var ctx;
 var currMemeText;
-var countOfKeywords = [];
+var res = {};
 
 
 ///=== A function that loads the page ==== ///
@@ -19,7 +19,9 @@ function init() {
     renderMemes();
     canvas = document.querySelector('.canvas');
     ctx = canvas.getContext('2d');
+
 }
+
 
 
 
@@ -59,8 +61,6 @@ function drawCanvas() {
 
     };
 }
-
-
 
 
 ///==== A function that types text input on canvas and  === ////
@@ -103,15 +103,23 @@ function typeOnKeyword(keywordToSearch){
 ///==== A function that handles the popular keyword  === ////
 
 function clickOnKeyword(keyword) {
-    typeOnKeyword(keyword.innerHTML);
-    increaseFont(keyword);
+    // typeOnKeyword(keyword.innerHTML);
+    // res = {};
+    var currInc;
+    res[keyword.innerHTML] = (res[keyword.innerHTML] === undefined)? 1 : res[keyword.innerHTML]+1;
+    // console.log(res[keyword.innerHTML])
+    currInc = res[keyword.innerHTML];
+    increaseFont(keyword,currInc);
     
 }
 
-function increaseFont(keyword){
+function increaseFont(keyword,increase){
     var fontSize = parseInt($(`#${keyword.id}`).css("font-size"));
-    fontSize = fontSize + 2 + "px";
+    console.log(fontSize);
+    fontSize = 14 + increase + "px";
+    console.log(fontSize);
     $(`#${keyword.id}`).css({'font-size':fontSize});
+    console.log(fontSize);
 }
 
 
