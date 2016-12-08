@@ -30,9 +30,14 @@ function renderMemes() {
         var id = hexagon.id;
         var url = hexagon.url;
         var keywords = hexagon.keywords;
-        strHtml += '<div class="hexagon img-resposive" onclick="selectMeme(' + id + ')" style="background-image: url(' + url + ')" id="' + id + '">';
-
-        strHtml += '' + '<div class="face1"></div><div class="face2"></div></div>';
+        //es6 template - looks more like html , no need to break lines
+        // join - wanted to show the keywords on hover
+        //title - built in html show on hover
+        strHtml += `
+                    <div class="hexagon img-resposive" onclick="selectMeme(${id})"
+                        style="background-image: url(${url})" title="${keywords.join(',')}" id="${id}" data-keywords=${JSON.stringify(keywords)}>
+                    <div class="face1"></div><div class="face2"></div></div>
+                  `;
 
     });
 
@@ -67,6 +72,29 @@ function typeOnCanvas() {
 }
 
 
+function typeOnKeyword(){
+    //catch the input
+    var keywordText = $('#keywords-text');
+    //runs on all .hexagon.img-resposive with jquery foreach
+    $('.hexagon.img-resposive').each(function(index,item) {
+    //create temp array with all the keywords of a specific hexagon
+        var tempKeywords = $(item).data('keywords');
+    //if some of the keywords has the character don't touch the img 
+    //if it doesn't have - add class hide
+        if(!tempKeywords.some(function(keyword) {
+                return keyword.includes(keywordText.val())
+            }))
+        {
+            $(item).addClass('hide');
+        }
+        else {
+            $(item).removeClass('hide');
+        }
+    });
+}
+
+
+
 
 /// ===== main ===== ////
 
@@ -74,7 +102,7 @@ function typeOnCanvas() {
 function selectMeme(memeId) {
     gMeme = { item: { id: memeId }, labels: [{ txt: '', color: '#3F2' }] };
     drawCanvas();
-    showMemeSection()
+    showMemeSection();
 }
 
 

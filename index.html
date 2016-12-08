@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body onload="init()">
+<body onload="init()" >
 	<!-- Main Container -->
 	<section class="container">
 		<!--  Main Nav -->
@@ -37,6 +37,7 @@
 
 		</section>
 		<!--  END GALLERY -->
+		<input id="keywords-text" type="text" placeholder="enter keyword" oninput="typeOnKeyword()">
 		<!--  Meme Generator -->
 		<section class="container canvas-main">
 			<canvas class="canvas" width="800" height="400" style="border: 1px solid black"></canvas>
