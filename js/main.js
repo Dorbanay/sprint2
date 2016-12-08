@@ -85,10 +85,10 @@ function typeOnKeyword(){
                 return keyword.includes(keywordText.val())
             }))
         {
-            $(item).addClass('hide');
+            $(item).fadeOut(1000);
         }
         else {
-            $(item).removeClass('hide');
+            $(item).fadeIn(1000);
         }
     });
 }

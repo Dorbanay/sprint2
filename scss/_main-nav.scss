@@ -10,15 +10,20 @@
   display: none;
 }
 
+
+
+.main-nav__items{
+  margin: auto;
+}
+
+
 .main-nav__item {
   font-size: rem-calc(14px);
-  width: 135px;
+  width: em(180px);
+  padding: 0 em(20px);
   text-align: center;
-  padding-top: 50px;
-  height: var(--main-nav-height);
-  border-left: 0.5px solid black;
-  border-right: 0.5px solid black;
   color: white;
+  margin: auto;
   &:hover{
     color: #58c93a;
     border-bottom: 5px solid #58c93a;
