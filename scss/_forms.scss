@@ -18,6 +18,7 @@
   width: 100%;
     @include for-mobile-only {
        margin: 0 ; 
+       padding: 5px;
        
   }
 }
@@ -39,6 +40,9 @@
   font-weight: 400;
   line-height: 5px;
   margin-top: em(50px);
+  @include for-mobile-only {
+       margin: 5px;
+  }
 }
 
 .form-secondery__title {
@@ -139,7 +143,7 @@ background-color: #323232;
   color: #e0e0e0;
   font-weight: 300;
     @include for-mobile-only {
-       margin: em(5px);
+       margin: em(3px);
        width: 100%; 
     }
 }
@@ -148,6 +152,7 @@ background-color: #323232;
   padding-top: 15px;
   @include for-mobile-only {
        margin: 0;
+       padding: 0;
 
     }
 }

@@ -32,9 +32,10 @@
      font-family: "Maven Pro Regular";
      font-size: rem(36px);
      font-weight: 400;
-      @include for-mobile-only {
-      //  margin: 10px;
-  }
+     @include for-mobile-only {
+       margin: 0;
+       padding: 0;
+    }
 }
 
 
