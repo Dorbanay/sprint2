@@ -37,7 +37,7 @@
 			</section>
 			<div class="main-gallery">
 				<div class="inputKeywordDiv">
-				<input id="keywords-text" type="text" placeholder="enter keyword" oninput="typeOnKeyword()">
+					<input id="keywords-text" class="gallery-input__text" type="text" placeholder="enter keyword" oninput="typeOnKeyword()">
 				</div>
 				<div class="keywords-popular flex flex-wrap align-center justify-center space-around">
 					<div id="keywords-popular__text1" onclick="clickOnKeyword(this)">happy</div>
@@ -53,16 +53,14 @@
 
 
 		<!--  Meme Generator -->
-		<section class="container canvas-main">
-			<canvas class="canvas" width="800" height="400" style="border: 1px solid black"></canvas>
-			<input id="custom-text" type="text" placeholder="enter some text" oninput="typeOnCanvas()">
-			<button>ss</button>
-			<button>ssss</button>
-			<a id="download" onclick="downloadImg(this)">
-         	 Download as image
-      		</a>
-			<button onclick="showGallerySection()">Back To Gallery</button>
-			<!--<input id="custom-text2" type="text" placeholder="enter some text" oninput="typeOnCanvas2()">-->
+		<section class="inner-container2 canvas-main flex align-center">
+			<div><canvas class="canvas" width="600" height="400"></canvas></div>
+			<div class="flex align-center justify-center flex-column">
+				<input id="custom-text2" class="input-text" type="text" placeholder="enter some text" oninput="typeOnCanvas2()">
+				<input id="custom-text" class="input-text" type="text" placeholder="enter some text" oninput="typeOnCanvas()">
+				<a id="download" onclick="downloadImg(this)"> Download as image </a>
+			</div>
+			<div><button class="meme-button" onclick="showGallerySection()">Back To Gallery</button></div>
 		</section>
 		<!-- End Meme Generator -->
 		<hr>

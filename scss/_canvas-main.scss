@@ -1,4 +1,40 @@
 .canvas-main {
     display: none;
+    margin: auto;
 }   
 
+.canvas {
+    // display: block;
+    margin: em(50px);
+}
+
+.input-text {
+  margin: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #b7b7b7;
+  border-radius: 14px;
+  text-overflow: clip;
+  background: rgba(252,252,252,1);
+  box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.28) ;
+ 
+}
+
+.meme-button {
+    font-size: rem(24px);
+    margin-left: em(30px);
+    border: 1px solid black;
+    border-radius: 15px;
+    color: black;
+    background-color: snow;
+    transition: all 1s;
+      &:hover {
+    background-color: black;
+    color: snow;
+    border: 1px solid snow;
+  }
+}
+
+// .download-link {
+
+// }

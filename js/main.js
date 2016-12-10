@@ -24,7 +24,6 @@ function init() {
 
 
 
-
 /// ===== A function thats redners the model hexagons to the DOM ==== ////
 function renderMemes() {
     var strHtml = '';
@@ -48,8 +47,6 @@ function renderMemes() {
 }
 
 
-
-
 function drawCanvas() {
 
     var img = new Image();
@@ -57,7 +54,8 @@ function drawCanvas() {
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
         ctx.font = "60px 'Segoe UI'";
-        ctx.fillText(gMeme.labels[0].txt, 50, 300)
+        ctx.fillText(gMeme.labels[0].txt, 50, 320)
+        ctx.fillText(gMeme.labels[0].txt2, 50, 50)
 
     };
 }
@@ -68,6 +66,13 @@ function drawCanvas() {
 function typeOnCanvas() {
     var memeText = $('#custom-text');
     gMeme.labels[0].txt = memeText.val();
+    drawCanvas();
+}
+
+
+function typeOnCanvas2() {
+    var memeText2 = $('#custom-text2');
+    gMeme.labels[0].txt2 = memeText2.val();
     drawCanvas();
 }
 
@@ -102,7 +107,7 @@ function typeOnKeyword(keywordToSearch) {
 ///==== A function that handles the popular keyword  === ////
 
 function clickOnKeyword(keyword) {
-    // typeOnKeyword(keyword.innerHTML);
+    typeOnKeyword(keyword.innerHTML);
     var currInc;
     res[keyword.innerHTML] = (res[keyword.innerHTML] === undefined) ? 1 : res[keyword.innerHTML] + 1;
     // console.log(res[keyword.innerHTML])
@@ -125,7 +130,7 @@ function increaseFont(keyword, increase) {
 
 
 function selectMeme(memeId) {
-    gMeme = { item: { id: memeId }, labels: [{ txt: '', color: '#3F2' }] };
+    gMeme = { item: { id: memeId }, labels: [{ txt: '', txt2: '' }] };
     drawCanvas();
     showMemeSection();
 }
@@ -135,6 +140,7 @@ function selectMeme(memeId) {
 
 function showMemeSection() {
     var elMainGallery = $('.main-gallery');
+    // elMainGallery.css({opacity: 0.2})
     elMainGallery.hide(1000);
     var elCanvas = $('.canvas-main');
     elCanvas.show(1000);
@@ -159,6 +165,4 @@ function downloadImg(elLink) {
     elLink.href = canvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
 }
-
-
 

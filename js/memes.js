@@ -3,7 +3,7 @@
 
 function getMemes() {
     var hexagons = [];
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 14  ; i++) {
         var hexId = i + 1;
         var hex = {
             id: hexId,
