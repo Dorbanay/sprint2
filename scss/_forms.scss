@@ -4,14 +4,159 @@
   font-family: var(--primary-font);
 }
 
+.form-wrapper {
+      @include for-mobile-only {
+    flex-direction: column;
+  }
+}
+
+.form-area {
+  color: #e0e0e0;
+  background-color: #323232;
+	padding:10px 40px 60px;
+  margin-left: em(100px);
+  width: 100%;
+    @include for-mobile-only {
+       margin: 0 ; 
+       padding: 5px;
+       
+  }
+}
+
+
 .form-control {
   border: none;
-  border-bottom: 1px solid #000;
-  background-color: transparent;
-  width: 100%;
   padding: 0.5em 0.2em;
+  color: #e0e0e0;
+    @include for-mobile-only {
+       margin: 0;
+  }
 }
+
+.form-main__title {
+  color: #e0e0e0;
+  font-family: "Maven Pro Regular";
+  font-size: rem(30px);
+  font-weight: 400;
+  line-height: 5px;
+  margin-top: em(50px);
+  @include for-mobile-only {
+       margin: 5px;
+  }
+}
+
+.form-secondery__title {
+  color: #bebebe;
+  font-family: "Maven Pro Regular";
+  font-size: rem(20px);
+  font-weight: 400;
+  line-height: 22px;
+}
+
 
 .form-group {
   margin: 1em 0;
+  
+}
+
+.bg2 {
+background-color: #323232;
+}
+
+
+  ::-webkit-input-placeholder { 
+  color: #e0e0e0;
+}
+
+
+.form-name { 
+  width: 100%;
+  background-color: #454545;
+ @include for-mobile-only {
+       margin: 0;
+    }
+}
+
+.form-email { 
+   width: 100%;
+  background-color: #454545;
+  @include for-mobile-only {
+       margin: 0;
+    }
+}
+
+.form-subject { 
+   width: 100%;
+  background-color: #454545;
+  @include for-mobile-only {
+       margin: 0;
+    }
+}
+
+.form-message { 
+   width: 100%;
+  background-color: #454545;
+    @include for-mobile-only {
+       margin: 0;
+    }
+}
+
+.submit-button {
+  border: none;
+  float: right;
+  width: em(90px);
+  height: em(37px);
+  background-color: #2eb398;
+  color: #d7fcf5;
+  font-size: rem(12px);
+  font-weight: 700;
+  line-height: 22px;
+  cursor: pointer;
+  transition: all 1s;
+  &:hover {
+    background-color:#d7fcf5;
+    color: #2eb398;
+    border: 1px solid #2eb398;
+  }
+    @include for-mobile-only {
+       margin: 0;
+    }
+}
+
+
+.text-area {
+    margin-right: em(200px);
+    margin-top: em(115px);
+    @include for-mobile-only {
+       margin: em(5px);
+      
+    }
+
+}
+
+
+.text-area__summery {
+  width: 60%;
+  margin-top: em(115px);
+  font-size: rem(12px);
+  line-height: 22px;
+  color: #e0e0e0;
+  font-weight: 300;
+    @include for-mobile-only {
+       margin: em(3px);
+       width: 100%; 
+    }
+}
+
+.text-area__info {
+  padding-top: 15px;
+  @include for-mobile-only {
+       margin: 0;
+       padding: 0;
+
+    }
+}
+
+.mark {
+  text-decoration: bold;
 }

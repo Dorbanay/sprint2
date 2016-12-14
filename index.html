@@ -5,43 +5,152 @@
 	<meta charset="UTF-8">
 	<title>Meme Generator2</title>
 	<link rel="stylesheet" href="dist/styles.css">
+	<title>Meme GeneratorNew</title>
+	<link rel="stylesheet" href="dist/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
-		<!-- Main Container -->
-		<section class="container">
-				<!--  Main Nav -->
-				<nav class="main-nav flex align-center">
-					<input type="checkbox" id="main-nav__mobile-checkbox">
-					<label for="main-nav__mobile-checkbox" class="main-nav__mobile-icon">&#9776;</label>
-					<div class="main-nav__inner flex space-between">
-						<ul class="clean-list main-nav__logo">
-						</ul>
-						<ul class="clean-list main-nav__items flex">
-							<li><a href="#" class="main-nav__item">Journal</a></li>
-							<li><a href="#" class="main-nav__item ">About</a></li>
-                            <div>  adasd </div>
-							<li><a href="#" class="main-nav__item ">Work</a></li>
-							<li><a href="#" class="main-nav__item ">Contact</a></li>
-						</ul>
-					</div>
-				</nav>
+<body onload="init()">
+	<!-- Main Container -->
+	<section class="container">
+		<!--  Main Nav -->
+		<nav class="main-nav flex align-center">
+			<input type="checkbox" id="main-nav__mobile-checkbox">
+			<label for="main-nav__mobile-checkbox" class="main-nav__mobile-icon">&#9776;</label>
+			<div class="main-nav__inner flex space-between">
+				<ul class="clean-list main-nav__logo">
+				</ul>
+				<ul class="clean-list main-nav__items flex align-center justify-center">
+					<li><a href="#gallery" class="main-nav__item">Journal</a></li>
+					<li><a href="#about" class="main-nav__item ">About</a></li>
+					<div class="arrow-down"></div>
+					<div class="arrow-icon"><img src="../assets/imgs/logo.png" alt="logo"></div>
+					<li><a href="#" class="main-nav__item ">Work</a></li>
+					<li><a href="#contact" class="main-nav__item ">Contact</a></li>
+				</ul>
 			</div>
-            <section class="main-gallery flex full-height">
-                <div class="main-gallery__item hexagon"></div>
+		</nav>
+		</div>
+		<!--  End Nav -->
 
-
-
-
-
-
-
-
-
-            </section>
+		<!--  GALLERY -->
+		<section class="inner-container2" id="gallery">
+			<section class="main-gallery flex flex-wrap align-center justify-center">
+			</section>
+			<div class="main-gallery">
+				<div class="inputKeywordDiv">
+					<input id="keywords-text" class="gallery-input__text" type="text" placeholder="enter keyword" oninput="typeOnKeyword()">
+				</div>
+				<div class="keywords-popular flex flex-wrap align-center justify-center space-around">
+					<div id="keywords-popular__text1" onclick="clickOnKeyword(this)">happy</div>
+					<div id="keywords-popular__text2" onclick="clickOnKeyword(this)">crazy</div>
+					<div id="keywords-popular__text3" onclick="clickOnKeyword(this)">sarcastic</div>
+					<div id="keywords-popular__text4" onclick="clickOnKeyword(this)">sad</div>
+					<div id="keywords-popular__text5" onclick="clickOnKeyword(this)">animal</div>
+				</div>
+			</div>
 		</section>
+		<!--  END GALLERY -->
 
-	        	<script src="js/main.js"></script>
+
+
+		<!--  Meme Generator -->
+		<section class="inner-container2 canvas-main flex align-center">
+			<div><canvas class="canvas" width="600" height="400"></canvas></div>
+			<div class="flex align-center justify-center flex-column">
+				<input id="custom-text2" class="input-text" type="text" placeholder="enter some text" oninput="typeOnCanvas2()">
+				<input id="custom-text" class="input-text" type="text" placeholder="enter some text" oninput="typeOnCanvas()">
+				<a id="download" onclick="downloadImg(this)"> Download as image </a>
+			</div>
+			<div><button class="meme-button" onclick="showGallerySection()">Back To Gallery</button></div>
+		</section>
+		<!-- End Meme Generator -->
+		<hr>
+		<!--  About -->
+		<div class="bg" id="about">
+			<section class="main-about inner-container2 flex full-height">
+				<div>
+					<div class="hexagon main-about__img img-responsive img1">
+						<div class="face1"></div>
+						<div class="face2"></div>
+					</div>
+				</div>
+				<div class="main-about__text">
+					<p class="main-about__title">Rosh Naknik</p>
+					<p class="main-about__title2">trying to do sprint2</p>
+					<p class="main-about__summery">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis tristique, enim magna pretium
+						augue, eget consectetur sem dui non urna. Integer gravida, diam congue molestie fringilla, elit odio rhoncus turpis,
+						ac dictum libero elit vel metus. Morbi egestas sit amet velit eget venenatis. Mauris porttitor, nibh at sagittis tristique,
+						enim magna pretium augue, eget consectetur sem dui non urna.</p>
+				</div>
+				<hr>
+				<div>
+					<div class="hexagon main-about__img img-responsive img2">
+						<div class="face1"></div>
+						<div class="face2"></div>
+					</div>
+				</div>
+				<div class="main-about__text">
+					<p class="main-about__title">Rosh Naknik</p>
+					<p class="main-about__title2">trying to do sprint2</p>
+					<p class="main-about__summery">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis tristique, enim magna pretium
+						augue, eget consectetur sem dui non urna. Integer gravida, diam congue molestie fringilla, elit odio rhoncus turpis,
+						ac dictum libero elit vel metus. Morbi egestas sit amet velit eget venenatis. Mauris porttitor, nibh at sagittis tristique,
+						enim magna pretium augue, eget consectetur sem dui non urna.</p>
+				</div>
+			</section>
+		</div>
+		<!-- End About -->
+		<!-- Form -->
+		<div class="bg2" id="contact">
+			<section class="inner-container2 flex full-height form-wrapper">
+				<div class="form-area">
+					<form role="form">
+						<p class="form-main__title">Get in Touch</p>
+						<p class="form-secondery__title">in order to get in touch use the content form below:</p>
+						<div class="form-group">
+							<input type="text" class="form-control form-name" name="name" placeholder=" Name (Required)" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control form-email" name="email" placeholder=" Email (Required)" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control form-subject" name="subject" placeholder=" Subject" required>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control form-message" type="textarea" placeholder=" Write your message here..." rows="7"></textarea>
+						</div>
+						<button type="button" class="submit-button" name="submit">Send</button>
+					</form>
+				</div>
+				<div class="text-area__summery">
+					<div class="text-area__summery">
+						<p> <span class="mark">Quisque Hendrerit:</span> purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.
+							Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.</p>
+					</div>
+					<div class="text-area__info">
+						<p> Ha'Bonim St. 4 Ramat Gan</p>
+						<p> +9720545478331</p>
+						<p> roshnaknik@gmail.com</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- End Form -->
+		<!--  Footer -->
+		<section>
+			<footer class="full-height main-footer flex align-center">
+				<div>
+					<p class="main-footer__text">© Copyright 2013 by PSDchatp</p>
+				</div>
+			</footer>
+		</section>
+		<!--  End Footer -->
+	</section>
+	<!-- End Main Container -->
+	<script src="lib/jquery/jquery.js"></script>
+	<script src="js/memes.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>

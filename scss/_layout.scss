@@ -1,7 +1,44 @@
 /*----------  Containers  ----------*/
 
 .container {
-  // width: var(--container-width);
+  // width: var(--container-width);  
   margin: 0 auto;
   padding: 0 1em;
+    @include for-mobile-only {
+       padding: 0;
+      
+    }
+}
+
+
+.inner-container {  
+  // width: var(--inner-container-width);
+  width: 60%;
+  margin: auto;
+      @include for-mobile-only {
+       width: 100%;
+       padding: 10px;
+      
+    }
+}
+
+
+.inner-container2 {
+  // width: var(--inner-container-width);
+  width: 80%;
+  margin: auto;
+      @include for-mobile-only {
+       width: 100%;
+       padding: 10px;
+      
+    }
+  
+}
+
+
+
+@mixin for-mobile-only {
+  @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
 }

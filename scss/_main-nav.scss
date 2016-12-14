@@ -10,24 +10,59 @@
   display: none;
 }
 
+
+
+.main-nav__items{
+  margin: auto;
+}
+
+
 .main-nav__item {
   font-size: rem-calc(14px);
-  width: 135px;
+  width: 100%;
+  padding: 0 50px;
   text-align: center;
-  padding-top: 50px;
-  height: var(--main-nav-height);
-  border-left: 0.5px solid black;
-  border-right: 0.5px solid black;
   color: white;
+  margin: auto;
+  text-transform: uppercase;
   &:hover{
-    color: #58c93a;
-    border-bottom: 5px solid #58c93a;
+    color: #2eb398; 
   }
 }
 
 .main-nav__inner {
   width: 100%;
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+.arrow-down {
+  position: relative;
+  margin-top: em(105px);
+  width: 0; 
+  height: 0; 
+  border-left: 60px solid white ;
+  border-right: 60px solid white;
+  border-top: 35px solid #323232;
+}
+
+
+.arrow-icon {
+  position: absolute;
+  margin-top: em(15px);
+
+}
+
+
+
+
+
+
+
+>>>>>>> 3c0710e0303352d8efa340d5c21023cdb2a01b7f
 @media (max-width: $mobile-breakpoint) {
   .main-nav {
     display: block;

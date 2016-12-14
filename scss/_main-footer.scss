@@ -1,0 +1,15 @@
+.main-footer{
+    --main-footer-height: em(50px);  
+  height: var(--main-footer-height);
+  background-color: #222;
+}
+
+
+
+.main-footer__text{
+color: #656565;
+font-family: "Maven Pro Regular";
+font-size: rem(14px);
+font-weight: 400;
+line-height: 5px;
+}
